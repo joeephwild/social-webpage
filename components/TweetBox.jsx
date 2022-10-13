@@ -8,7 +8,7 @@ import { MdLocationOn } from 'react-icons/md'
 const TweetBox = () => {
   const [input, setInput] = useState('')
   return (
-    <div  className="flex space-x-2 px-5 py-1">
+    <div  className="flex fixed space-x-2 px-5 py-1">
       <div className="mt-4 h-14 border-2 rounded-full w-14  object-cover">
       <Image 
         src={profile}

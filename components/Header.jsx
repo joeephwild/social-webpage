@@ -10,8 +10,8 @@ import hash from '../public/assests/hashtag.svg'
 import { DarkTheme } from './DarkTheme';
 
 const style = {
-    wrapper: 'w-full cursor-pointer  dark:text-white text-black justify-center border-2 dark:border-0 flex justify-between items-center sticky top-0px-3 py-1.5 focus-within:shadow-lg',
-    leftWrap: 'flex items-center p-4',
+    wrapper: 'w-full cursor-pointer  dark:text-white text-black justify-center border-2 px-6 dark:border-0 flex justify-between items-center sticky top-0px-3 py-1.5 focus-within:shadow-lg',
+    leftWrap: 'flex md:block hidden items-center p-4',
     inputWrap: "md:flex items-center bg-gray-400 text-white dark:bg-gray-800  hidden text-gray-600 space-x-1 dark:md:bg-gray-700 py-2.5 px-4 rounded-lg ml-2 w-full",
     input: ' px-4 bg-transparent border-none  placeholder:text-black placeholder:text-lg outline-none focus:outline-none hidden md:inline-flex',
 }
@@ -19,16 +19,25 @@ const style = {
 const Header = () => {
    
   return (
-    <header className={style.wrapper}>
-        <div className=' lg:hidden block '>
+    <div>
+        {/* mobile header*/}
+        <div className='flex lg:hidden justify-between items-center px-5 py-3'>
+        <div className=' pt-3 '>
             <Image
-                className='rounded-full lg:hidden block overflow-hidden'
+                className='rounded-full pl-5 lg:hidden block overflow-hidden'
                  src={profile} 
-                 height={25} 
-                 width={25} 
+                 height={30} 
+                 width={30} 
                  objectFit='contain'
                   alt='' />
         </div>
+        <BsTwitter className='text-blue-600' size={34} />
+        <div className='block'>
+            <CgMenuGridO size={20} />
+            </div>
+        </div>
+        <header className={style.wrapper}>
+        
         <div className={style.leftWrap}>
             <BsTwitter className='text-blue-600' size={34} />
             <div className={style.inputWrap}>
@@ -59,10 +68,13 @@ const Header = () => {
                   alt='' />
                 <span className='pt-0.5'>Sarah Williamson</span>
             </section>
-            <CgMenuGridO size={20} />
+            
         </div>
+       
             <DarkTheme />
     </header>
+    </div>
+    
   )
 }
 
